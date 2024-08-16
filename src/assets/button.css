@@ -1,0 +1,45 @@
+  .button_style {
+    position: relative;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    background: #D92B2B;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin:5px;
+    text-align: center;
+  }
+  .button_style::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, #EC37D0, #D92B2B, #FFAA0D, #EC37D0);
+    background-size: 400%;
+    border-radius: 50px;
+    opacity: 0;
+    transition: .5s;
+  }
+  .button_style:hover {
+    animation: animate 10s linear infinite;
+    background: #EC37D0;
+  }
+  .button_style:hover::before {
+    filter: blur(25px);
+    opacity: .8;
+    animation: animate 10s linear infinite;
+  }
+  @keyframes animate {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 400%;
+    }
+  }
